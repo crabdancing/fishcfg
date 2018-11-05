@@ -51,8 +51,8 @@ set fish_suffix_user '$'
 # Offers option to override specific variables without rewriting this file.
 # I added this so my friends would be able to use my config.fish
 # and override features without editing this file and having to worry about merging updates.
-if test -e "/etc/fish/override.fish"
-    source "/etc/fish/override.fish"
+if test -e "/etc/fish/interactive-override.fish"
+    source "/etc/fish/interactive-override.fish"
 end
 
 function fish_prompt --description "Write out the prompt"
