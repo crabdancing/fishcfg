@@ -11,9 +11,9 @@ set -x PATH /usr/local/bin /usr/bin
 if test -e /cbin
     set -x PATH /cbin $PATH
 end
-)
+
 # Don't include /bin is it's symlinked to /usr/bin (as is the case with Arch Linux).
-linkpath=(readlink /bin)
+set linkpath (readlink /bin)
 if test $status -eq 0
     if test "$linkpath" = "usr/bin"
         set -x PATH $PATH /bin
