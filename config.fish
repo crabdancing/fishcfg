@@ -3,21 +3,9 @@
 
 ### Here's our env garbage
 
-# Core paths that probably exist on every (sane) system.
-# Note: Android is a nutcase system and we will pretend it does not exist.
-set -x PATH /usr/local/bin /usr/bin
-
 # Custom Bin -- where I put personal scripts. Must be first in $PATH.
 if test -e /cbin
     set -x PATH /cbin $PATH
-end
-
-# Don't include /bin is it's symlinked to /usr/bin (as is the case with Arch Linux).
-set linkpath (readlink /bin)
-if test $status -eq 0
-    if test "$linkpath" = "usr/bin"
-        set -x PATH $PATH /bin
-    end
 end
 
 # Detect valid paths and add them
