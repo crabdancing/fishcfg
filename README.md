@@ -29,4 +29,7 @@ that pulls the files from the repo straight to your computer is included in this
 You can simply `wget "https://raw.githubusercontent.com/alxpettit/fish/master/install.sh" -O - | sudo sh -`,
 if you're one of those people who likes to pipe directly to a root terminal off the internet.
 
+For the paranoid (myself included) there are `.gpg` signitures for each FISH file,
+which can be automatically checked before installation with `secure-install`.
+
 ![fish prompt image](media/fish-prompt.png)
