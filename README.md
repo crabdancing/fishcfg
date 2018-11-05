@@ -1,2 +1,2 @@
 # fish
-My FISH configuration
+A nice FISH configuration. 
