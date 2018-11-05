@@ -11,16 +11,19 @@ set -x PATH /usr/local/bin /usr/bin
 if test -e /cbin
     set -x PATH /cbin $PATH
 end
-
+)
 # Don't include /bin is it's symlinked to /usr/bin (as is the case with Arch Linux).
-if not test (readlink /bin) = "usr/bin"
-    set -x PATH $PATH /bin
+linkpath=(readlink /bin)
+if test $status -eq 0
+    if test "$linkpath" = "usr/bin"
+        set -x PATH $PATH /bin
+    end
 end
 
 # Detect valid paths and add them
 for newpath in /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl /usr/lib/plan9/bin
-    if test -e $newpath
-        set -x PATH $PATH $newpath
+    if test -e "$newpath"
+        set -x PATH $PATH "$newpath"
     end
 end
 
