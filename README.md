@@ -9,7 +9,7 @@
 * Indicators for current time, exit code of previous command, and disk usage, all with meaningful color cues.
 * Prompt looks red and dangerous when logged in as root.
 * Easy to override a lot of the code simply by creating `/etc/fish/override.fish` and `/etc/fish/interactive-override.fish`,
-making it easy to do rudimentary customizations without editing config files.
+making it easy to do rudimentary customizations without too much worry about merging future updates.
 * Optimized to be system-wide, so that you don't lose your pretty gay features when you `sudo -i`.
 * Some useful abbreviations.
 
