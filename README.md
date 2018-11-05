@@ -2,7 +2,7 @@
 
 ### Features 
 * Very reluctant FISH file-name truncation
-(you know, that thing were `/media/alexandria/code` becomes `/m/a/code`)
+(you know, that thing where `/media/alexandria/code` becomes `/m/a/code`)
 * Newline between status information and user input
 * So colorful that people will assume that you're queer
 * Lots and lots of comments to make it easier to understand & customize the code further
