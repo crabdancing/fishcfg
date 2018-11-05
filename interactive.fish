@@ -17,6 +17,7 @@ abbr -a ... ../..
 abbr -a .... ../../..
 abbr -a ..... ../../../..
 abbr -a ...... ../../../../..
+abbr -a dds 'dd conv=fsync bs=1M status=progress'
 
 # Makes it so prompt_pwd isn't so aggressive with its abbreviating paths
 set fish_prompt_pwd_dir_length 128

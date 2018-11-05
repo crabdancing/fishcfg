@@ -17,7 +17,14 @@ end
 
 set -x GRADLE_HOME /usr/share/java/gradle    
 set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
-set -x VISUAL vim
+set -x EDITOR "/usr/bin/vim"
+set -x VISUAL "$EDITOR"
+
+if test -e "/usr/bin/most"
+    set -x PAGER "/usr/bin/most"
+    set -x MANPAGER "$PAGER"
+    set -x SYSTEMD_PAGER "$PAGER"
+end
 
 # Overrides previous non-interactive code
 # Primarily here so that my friends can use this without editing core config files
