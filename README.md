@@ -22,7 +22,7 @@ making it easy to do rudimentary customizations without editing config files.
 ### Installation
 Just copy the .fish files from this repo to `/etc/fish`.
 [An install script](https://raw.githubusercontent.com/alxpettit/fish/master/install.sh)
-that pulls the files from the repo straight to your computer is included.
+that pulls the files from the repo straight to your computer is included in this repo, if you're lazy like me.
 
 (Note that this install script assumes you have `wget`!)
 
