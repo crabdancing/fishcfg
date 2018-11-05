@@ -1,6 +1,6 @@
 # A nice FISH configuration
 
-### Features: 
+### Features 
 * Very reluctant FISH file-name truncation
 (you know, that thing were `/media/alexandria/code` becomes `/m/a/code`)
 * Newline between status information and user input
@@ -10,4 +10,14 @@
 * Prompt looks red and dangerous when logged in as root
 * Easy to override a lot of the code simply by creating `/etc/fish/override.fish` and `/etc/fish/interactive-override.fish`,
 making it easy to do rudimentary customizations without editing config files. 
+
+### Prerequisites
+* Fish shell (obviously)
+* Perl
+* Perl Filesys::df (package name is `perl-filesys-df` on Arch, and `libfilesys-df-perl` on Debian OSes)
+* An environment that understands standard Unix commands
+
+### Installation
+Just copy the .fish files to `/etc/fish`.
+
 ![fish prompt image](media/fish-prompt.png)
