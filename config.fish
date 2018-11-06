@@ -24,11 +24,11 @@ set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
 set -x EDITOR "/usr/bin/vim"
 set -x VISUAL "$EDITOR"
 
-# Want most to be our pager, if it exists
-if test -e "/usr/bin/most"
-    set -x PAGER "/usr/bin/most"
+# Want vimpager to be our pager, if exist
+if test -e "/usr/bin/vimpager"
+    set -x PAGER "/usr/bin/vimpager"
     set -x MANPAGER "$PAGER"
-    set -x SYSTEMD_PAGER "$PAGER"
+    #set -x SYSTEMD_PAGER "$PAGER"
 end
 
 # Overrides previous non-interactive code

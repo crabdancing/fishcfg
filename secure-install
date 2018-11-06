@@ -1,12 +1,17 @@
 #!/usr/bin/env fish
 
+# Secure installer/updater for my FISH config, pulling from my github repos and verifying each file with GPG before install.
+# Copyleft (C)  Alexandria Pettit, GPLv3
+
+# Requires that you import my GPG key into your root keychain
+ 
 set tmpdir /tmp/fish-tmpdir
 set giturl 'https://raw.githubusercontent.com/alxpettit/fish/master/'
 set filelist interactive.fish config.fish
 mkdir -p $tmpdir
 for f in $filelist
-    wget "$giturl/$f" -O "$tmpdir/$f"
-    wget "$giturl/$f.gpg" -O "$tmpdir/$f.gpg"
+    wget -q "$giturl/$f" -O "$tmpdir/$f"
+    wget -q "$giturl/$f.gpg" -O "$tmpdir/$f.gpg"
 end
 
 for f in $filelist

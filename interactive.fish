@@ -35,7 +35,7 @@ set fish_color_hostname $hexcolor_cute_purple
 set fish_color_delimiter bryellow
 set fish_color_username $hexcolor_cute_pink
 set fish_color_time brcyan
-set fish_color_time_root $hexcolor_firey_orange
+set fish_color_time_root brred
 set fish_color_username_root brred
 set fish_color_cwd_root brred
 set fish_color_status bryellow
@@ -149,7 +149,7 @@ function fish_prompt --description "Write out the prompt"
     # Color for percentage of / taken up
     set Cpcnt (set_color $color_percent)
     # Color for time
-    set Ctime (set_color $fish_color_time)   
+    set Ctime (set_color $color_time)   
 
 
     ### Endgame: it's finally time for us to print our prompt line!
