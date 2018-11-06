@@ -44,10 +44,14 @@ set fish_color_percent_bad $hexcolor_firey_orange
 set fish_color_percent_worst brred
 set fish_color_status_zero brgreen
 set fish_color_status_nonzero brred 
+set fish_color_mscount magenta
 
 # Our suffixes for root and non-root respectively
 set fish_suffix_root '#'
 set fish_suffix_user '$'
+
+set fish_send_notification 1
+set fish_notification_threshold 5000
 
 # Offers option to override specific variables without rewriting this file.
 # I added this so my friends would be able to use my config.fish
@@ -57,6 +61,15 @@ if test -e "/etc/fish/interactive-override.fish"
 end
 
 function fish_prompt --description "Write out the prompt"
+    
+    # If desired, send notification when command
+    # takes longer than a certain amount of time to complete 
+    if test -e /usr/bin/notify-send -a $fish_send_notification = 1
+        set previous_proc (history | head -n 1)
+        if test $CMD_DURATION -gt $fish_notification_threshold
+            notify-send -t 3000 -i utilities-terminal 'Process complete' "$previous_proc"
+        end
+    end
 
     # Store status of last user-executed command
     # before it's overwritten.
@@ -151,3 +164,9 @@ function fish_prompt --description "Write out the prompt"
     echo -s $Cdlm $suffix  $Cnorm ' '
 end
 
+# Optional: add additional right-justified elements to terminal prompt
+function fish_right_prompt
+    set Cms (set_color $fish_color_mscount)
+    set Cnorm (set_color normal)
+    echo -s $Cms $CMD_DURATION $Cnorm
+end

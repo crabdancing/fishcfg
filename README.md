@@ -12,11 +12,16 @@
 making it easy to do rudimentary customizations without too much worry about merging future updates.
 * Optimized to be system-wide, so that you don't lose your pretty gay features when you `sudo -i`.
 * Some useful abbreviations.
+* An unobtrusive display of how long each previous command took, on the right side of the prompt.
+* A `notify-send` notification for if a command that takes more than 10 seconds is finished
+(good for multitasking with multiple terminals!)
+* Reasonably light-weight. Can run on a small Raspberry Pi system comfortably.
 
 ### Prerequisites
 * Fish shell (obviously).
 * Perl.
 * Perl Filesys::df (package name is `perl-filesys-df` on Arch, and `libfilesys-df-perl` on Debian OSes).
+On systems like Cygwin it will _probably_ work [if you install via CPAN](https://stackoverflow.com/questions/10483574/how-do-i-install-perl-libraries-in-cygwin#10483795), but I have not yet tested that. (Someone please test this, as Cygwin compatibility is one of my goals with this project!)
 * An environment that understands standard Unix commands.
 
 ### Installation

@@ -15,11 +15,16 @@ for newpath in /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/
     end
 end
 
+# Some standard environment variables
 set -x GRADLE_HOME /usr/share/java/gradle    
 set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
+
+# VIM is where it's at, for me
+# Other people can override this setting in /etc/fish/override.fish
 set -x EDITOR "/usr/bin/vim"
 set -x VISUAL "$EDITOR"
 
+# Want most to be our pager, if it exists
 if test -e "/usr/bin/most"
     set -x PAGER "/usr/bin/most"
     set -x MANPAGER "$PAGER"
