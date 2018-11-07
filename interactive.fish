@@ -61,7 +61,11 @@ if test -e "/etc/fish/interactive-override.fish"
 end
 
 function fish_prompt --description "Write out the prompt"
-    
+    # Store status of last user-executed command
+    # before it's overwritten.
+    set -l last_status $status
+
+
     # If desired, send notification when command
     # takes longer than a certain amount of time to complete 
     if test -e /usr/bin/notify-send -a $fish_send_notification = 1
@@ -70,10 +74,6 @@ function fish_prompt --description "Write out the prompt"
             notify-send -t 3000 -i utilities-terminal 'Process complete' "$previous_proc"
         end
     end
-
-    # Store status of last user-executed command
-    # before it's overwritten.
-    set -l last_status $status
 
     # Initialize suffix variable (controls whether we're using $ or #)
     set -l suffix

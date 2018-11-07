@@ -24,6 +24,9 @@ set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
 set -x EDITOR "/usr/bin/vim"
 set -x VISUAL "$EDITOR"
 
+# Needed for neovim to find my init.
+#set -x VIM /etc/nvim
+
 # Want vimpager to be our pager, if exist
 if test -e "/usr/bin/vimpager"
     set -x PAGER "/usr/bin/vimpager"
