@@ -60,6 +60,10 @@ if test -e "/etc/fish/interactive-override.fish"
     source "/etc/fish/interactive-override.fish"
 end
 
+if test -e "/usr/bin/thefuck"
+    thefuck --alias | source 
+end
+
 function fish_prompt --description "Write out the prompt"
     # Store status of last user-executed command
     # before it's overwritten.
@@ -68,7 +72,7 @@ function fish_prompt --description "Write out the prompt"
 
     # If desired, send notification when command
     # takes longer than a certain amount of time to complete 
-    if test -e /usr/bin/notify-send -a $fish_send_notification = 1
+    if test -e /usr/bin/notify-send -a $fish_send_notification -eq 1 -a -n $DISPLAY
         set previous_proc (history | head -n 1)
         if test $CMD_DURATION -gt $fish_notification_threshold
             notify-send -t 3000 -i utilities-terminal 'Process complete' "$previous_proc"
