@@ -13,10 +13,8 @@ making it easy to do rudimentary customizations without too much worry about mer
 * Optimized to be system-wide, so that you don't lose your pretty gay features when you `sudo -i`.
 * Some useful abbreviations.
 * An unobtrusive display of how long each previous command took, on the right side of the prompt.
-* A `notify-send` notification for if a command that takes more than 10 seconds is finished
-(good for multitasking with multiple terminals!)
+* A `notify-send` notification for if a command that takes more than 10 seconds is finished. Note that this makes use of `xdotool` and `$WINDOWID` to detect if the window has focus or not. This feature has problems with terminal multiplexers, and I need to figure out a way around that. This may be eventually refactored using the serial method suggested by egmont [here](https://unix.stackexchange.com/a/480138/310093), or I might simply build some tmux hooks for importing `$WINDOWID`. 
 * Reasonably light-weight. Can run on a small Raspberry Pi system comfortably.
-
 ### Prerequisites
 * Fish shell (obviously).
 * Perl.
