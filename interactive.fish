@@ -67,7 +67,7 @@ end
 # If this returns 0, it's in the background
 function window_is_in_background --description "Test for window focus"
     
-    if test (xdotool getwindowfocus) -eq "$WINDOWID"
+    if test (xdotool getwindowfocus) = "$WINDOWID"
         # 1 = false in shell-land.
         # Why? Because we like to confuse people.
         return 1
@@ -84,7 +84,7 @@ function fish_prompt --description "Write out the prompt"
 
     # If desired, send notification when command
     # takes longer than a certain amount of time to complete 
-    if test -e /usr/bin/notify-send -a "$fish_send_notification" -eq 1 -a \
+    if test -e /usr/bin/notify-send -a "$fish_send_notification" = "1" -a \
     -n "$DISPLAY"
         # Check if our window is NOT focused
         if window_is_in_background
