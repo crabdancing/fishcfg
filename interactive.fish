@@ -1,6 +1,7 @@
 # FISH config file specifically for interactive mode
 # Copyleft (C) Alexandra Pettit, GNU GPLv3
 
+
 # Dummy function for disabling FISH greeting
 function fish_greeting
 end
@@ -54,7 +55,7 @@ set fish_suffix_root '#'
 set fish_suffix_user '$'
 
 set fish_send_notification 1
-set fish_notification_threshold 5000
+set fish_notification_threshold 10000
 
 # Offers option to override specific variables without rewriting this file.
 # I added this so my friends would be able to use my config.fish
@@ -88,9 +89,8 @@ function fish_prompt --description "Write out the prompt"
     # takes longer than a certain amount of time to complete 
     if test -e /usr/bin/notify-send -a "$fish_send_notification" = "1" -a \
     -n "$DISPLAY"
-        # Check if our window is NOT focused
-        if window_is_in_background
-            if test "$CMD_DURATION" -gt "$fish_notification_threshold"
+        if test "$CMD_DURATION" -gt "$fish_notification_threshold"
+            if window_is_in_background
                 notify-send -t $fish_notify_duration_ms -i utilities-terminal 'Process complete' "$history[1]"
             end
         end
