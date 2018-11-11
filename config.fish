@@ -18,22 +18,22 @@ end
 # Some standard environment variables
 set -x GRADLE_HOME /usr/share/java/gradle    
 set -x MOZ_PLUGIN_PATH /usr/lib/mozilla/plugins
-
 # VIM is where it's at, for me
 # Other people can override this setting in /etc/fish/override.fish
-set -x EDITOR "/usr/bin/vim"
+set -x EDITOR "/usr/bin/nvim"
 set -x VISUAL "$EDITOR"
 
 # Needed for neovim to find my init.
 #set -x VIM /etc/nvim
 
 # Want vimpager to be our pager, if exist
-if test -e "/usr/bin/vimpager"
-    set -x PAGER "/usr/bin/vimpager"
+if test -e "/usr/bin/most"
+    set -x PAGER "/usr/bin/most"
     set -x MANPAGER "$PAGER"
-    #set -x SYSTEMD_PAGER "$PAGER"
+
 end
 
+set -x SYSTEMD_PAGER "/usr/bin/less"
 # Overrides previous non-interactive code
 # Primarily here so that my friends can use this without editing core config files
 if test -e /etc/fish/override.fish

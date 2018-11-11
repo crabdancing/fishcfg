@@ -8,8 +8,6 @@ end
 ### Helpful FISH abbreviations
 
 set -g fish_user_abbreviations
-abbr -a jctl journalctl
-abbr -a sctl systemctl
 abbr -a s sudo
 abbr -a e exit
 abbr -a q exit
@@ -18,6 +16,10 @@ abbr -a .... ../../..
 abbr -a ..... ../../../..
 abbr -a ...... ../../../../..
 abbr -a dds 'dd conv=fsync bs=1M status=progress'
+
+# aliases permit tab suggestions to work with the shorter version
+alias jctl journalctl
+alias sctl systemctl
 
 # Makes it so prompt_pwd isn't so aggressive with its abbreviating paths
 set fish_prompt_pwd_dir_length 128
@@ -45,6 +47,7 @@ set fish_color_percent_worst brred
 set fish_color_status_zero brgreen
 set fish_color_status_nonzero brred 
 set fish_color_mscount magenta
+set fish_notify_duration_ms 5000
 
 # Our suffixes for root and non-root respectively
 set fish_suffix_root '#'
@@ -66,7 +69,6 @@ end
 
 # If this returns 0, it's in the background
 function window_is_in_background --description "Test for window focus"
-    
     if test (xdotool getwindowfocus) = "$WINDOWID"
         # 1 = false in shell-land.
         # Why? Because we like to confuse people.
@@ -89,7 +91,7 @@ function fish_prompt --description "Write out the prompt"
         # Check if our window is NOT focused
         if window_is_in_background
             if test "$CMD_DURATION" -gt "$fish_notification_threshold"
-                notify-send -t 3000 -i utilities-terminal 'Process complete' "$history[1]"
+                notify-send -t $fish_notify_duration_ms -i utilities-terminal 'Process complete' "$history[1]"
             end
         end
     end
