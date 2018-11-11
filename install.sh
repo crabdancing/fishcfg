@@ -5,3 +5,4 @@
 
 wget "https://raw.githubusercontent.com/alxpettit/fish/master/interactive.fish" -O /etc/fish/interactive.fish
 wget "https://raw.githubusercontent.com/alxpettit/fish/master/config.fish" -O /etc/fish/config.fish
+wget "https://raw.githubusercontent.com/alxpettit/fish/master/login.fish" -O /etc/fish/config.fish

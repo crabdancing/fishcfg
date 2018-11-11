@@ -1,5 +1,10 @@
 # Entry-point FISH config file
-# Copyleft (C) Alexandria Pettit, GNU GPLv3 
+# Copyleft (C) Alexandra Pettit, GNU GPLv3 
+
+
+if status --is-login
+    source /etc/fish/login.fish
+end
 
 ### Here's our env garbage
 
