@@ -35,4 +35,8 @@ if you're one of those people who likes to pipe directly to a root terminal off 
 For the paranoid (myself included) there are `.gpg` signitures for each FISH file,
 which can be automatically checked before installation with [fish-secure-install.fish](https://raw.githubusercontent.com/alxpettit/fish/master/bin/fish-secure-install.fish).
 
+Note that you will likely need local `~/.config/fish/config.fish` rc files that all simply `source /etc/fish/config.fish` for this to work,
+as of this writing. (Hopefully the FISH team will fix this sometime soon.)
+
+I have thus created a [fish-integrate.fish](https://raw.githubusercontent.com/alxpettit/fish/master/bin/fish-integrate.fish) script to automate that task.
 ![fish prompt image](media/fish-prompt.png)
