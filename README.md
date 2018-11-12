@@ -24,12 +24,12 @@ On systems like Cygwin it will _probably_ work [if you install via CPAN](https:/
 
 ### Installation
 Just copy the .fish files from this repo to `/etc/fish`.
-[An install script](https://raw.githubusercontent.com/alxpettit/fish/master/bin/install.sh)
+[An install script](https://raw.githubusercontent.com/alxpettit/fish/master/bin/fish-install.sh)
 that pulls the files from the repo straight to your computer is included in this repo, if you're lazy like me.
 
 (Note that this install script assumes you have `wget`!)
 
-You can simply `wget "https://raw.githubusercontent.com/alxpettit/fish/master/bin/install.sh" -O - | sudo sh -`,
+You can simply `wget "https://raw.githubusercontent.com/alxpettit/fish/master/bin/fish-install.sh" -O - | sudo sh -`,
 if you're one of those people who likes to pipe directly to a root terminal off the internet.
 
 For the paranoid (myself included) there are `.gpg` signitures for each FISH file,
