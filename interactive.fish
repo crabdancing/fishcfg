@@ -17,6 +17,7 @@ abbr -a .... ../../..
 abbr -a ..... ../../../..
 abbr -a ...... ../../../../..
 abbr -a dds 'dd conv=fsync bs=1M status=progress'
+abbr -a ytdl youtube-dl
 
 # aliases permit tab suggestions to work with the shorter version
 alias jctl journalctl
