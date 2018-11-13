@@ -1,5 +1,5 @@
 # FISH config file specifically for interactive mode
-# Copyleft (C) Alexandra Pettit, GNU GPLv3
+# Copyleft (C) Alexandria Pettit, GNU GPLv3
 
 
 # Dummy function for disabling FISH greeting

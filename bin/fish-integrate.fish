@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-# Copyleft (C) Alexandra Pettit GNU GPL v3
+# Copyleft (C) Alexandria Pettit GNU GPL v3
 # This is a utility script intended to automate the process of adding source scripts for each user to the main
 # /etc/fish/config.fish
 

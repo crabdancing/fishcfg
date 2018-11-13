@@ -1,4 +1,4 @@
-# Copyleft Alexandra Pettit 2018
+# Copyleft Alexandria Pettit 2018
 
 # Just a bit of unecessary boilerplate for later, really
 
